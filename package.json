@@ -1,0 +1,26 @@
+{
+  "name": "ui5-node",
+  "version": "0.2.0",
+  "description": "OpenUI5 app",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve",
+    "lint": "eslint webapp",
+    "watch": "start-server-and-test start http://localhost:8080 karma",
+    "test": "npm run lint && rimraf coverage && start-server-and-test start http://localhost:8080 karma-ci",
+    "build": "rimraf dist && ui5 build --a"
+  },
+  "dependencies": {
+    "@openui5/sap.m": "^1.60.0",
+    "@openui5/sap.ui.core": "^1.60.0",
+    "@openui5/themelib_sap_belize": "^1.60.0"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^1.0.0",
+    "eslint": "^4.19.1",
+    "qunitjs": "^2.4.1",
+    "rimraf": "^2.6.2",
+    "start-server-and-test": "^1.4.1"
+  }
+}
